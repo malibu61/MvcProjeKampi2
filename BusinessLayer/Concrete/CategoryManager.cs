@@ -24,6 +24,13 @@ namespace BusinessLayer.Concrete
             _categoryDal.Insert(category);
         }
 
+
+        public int TCategoryCount()
+        {
+            return _categoryDal.CategoryCount();
+
+        }
+
         public void CategoryDelete(Category category)
         {
             _categoryDal.Delete(category);
@@ -42,6 +49,21 @@ namespace BusinessLayer.Concrete
         public List<Category> GetList()
         {
             return _categoryDal.List();
+        }
+
+        public string TCategoryWithMostTitle()
+        {
+            return _categoryDal.CategoryWithMostTitle();
+        }
+
+        public int DistinctionBetweenTrueAndFalseInCategory()
+        {
+            return _categoryDal.DistinctionBetweenTrueAndFalseInCategory();
+        }
+
+        public string LongestCategoryName()
+        {
+           return _categoryDal.LongestCategoryName();
         }
     }
 }

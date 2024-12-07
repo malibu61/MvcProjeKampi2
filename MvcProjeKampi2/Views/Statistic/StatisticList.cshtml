@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "StatisticList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web2/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/web2/css/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body style="width:100%;">
+
+    <div class="total-content">
+        <div class="center-box bg-green">
+            <div class="icon-text">
+                <h3>@ViewBag.v1</h3>
+                <p>Toplam Kategori Sayısı</p>
+            </div>
+        </div>
+        <div class="center-box bg-red">
+            <div class="icon-text">
+                <h3>@ViewBag.v2</h3>
+                <p>Yazılım İle Alakalı Başlık</p>
+            </div>
+        </div>
+        <div class="center-box bg-blue">
+            <div class="icon-text">
+                <h3>@ViewBag.v3</h3>
+                <p>İçinde A Geçen Yazar Adı Sayısı</p>
+            </div>
+        </div>
+        <div class="center-box bg-purple">
+            <div class="icon-text">
+                <h3>@ViewBag.v4</h3>
+                <p>En Fazla Başlığa Sahip Kategori</p>
+            </div>
+        </div>
+        <div class="center-box bg-yellow">
+            <div class="icon-text">
+                <h3>@ViewBag.v5</h3>
+                <p>Min Fiyatlı Ürün</p>
+            </div>
+        </div>
+        <div class="center-box bg-orange">
+            <div class="icon-text">
+                <h3>@ViewBag.v6</h3>
+                <p>En Uzun Kategori Adı</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

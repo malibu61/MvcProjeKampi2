@@ -14,5 +14,10 @@ namespace BusinessLayer.Abstract
         Category GetByID(int id);
         void CategoryDelete(Category category);
         void CategoryUpdate(Category category);
+        int TCategoryCount();
+        string TCategoryWithMostTitle();
+        int DistinctionBetweenTrueAndFalseInCategory();
+        string LongestCategoryName();
+
     }
 }

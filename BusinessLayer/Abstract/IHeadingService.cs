@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.EntityFramework
+namespace BusinessLayer.Abstract
 {
-    public class EfContentDal
+    public interface IHeadingService
     {
+        int TSoftwareCategoryCountInHeadingTable();
     }
 }

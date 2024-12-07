@@ -9,5 +9,10 @@ namespace DataAccessLayer.Abstract
 {
     public interface ICategoryDal : IRepositoryDal<Category>
     {
+        int CategoryCount();
+        string CategoryWithMostTitle();
+        int DistinctionBetweenTrueAndFalseInCategory();
+        string LongestCategoryName();
+
     }
 }
