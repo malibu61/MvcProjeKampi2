@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Heading
+
+@{
+    ViewBag.Title = "EditHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .field-validation-error {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+
+
+@using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.HeadingId)
+
+    <label>Başlık Adı</label>
+    @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.HeadingName)
+
+    <br />
+    <br />
+
+    <label>Kategori</label>
+    @Html.DropDownListFor(m => m.CategoryId, (List<SelectListItem>)ViewBag.vCategories, new { @class = "form-control" })
+
+    <br />
+    <br />
+
+    <label>Yazar</label>
+    @Html.DropDownListFor(m => m.AuthorId, (List<SelectListItem>)ViewBag.vAuthors, new { @class = "form-control" })
+
+    <br />
+    <br />
+
+    <button class="btn btn-info">Güncelle</button>
+}

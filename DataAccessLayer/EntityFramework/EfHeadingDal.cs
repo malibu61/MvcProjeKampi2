@@ -15,6 +15,7 @@ namespace DataAccessLayer.EntityFramework
         public EfHeadingDal() : base()
         {
         }
+
         public int SoftwareCategoryCountInHeadingTable()
         {
             using (var context = new Context())

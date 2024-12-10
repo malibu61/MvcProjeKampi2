@@ -1,0 +1,60 @@
+﻿@model EntityLayer.Concrete.Author
+
+@{
+    ViewBag.Title = "AddAuthor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddAuthor", "Author", FormMethod.Post))
+{
+    <label>Yazar Adı</label>
+    <input type="text" name="AuthorName" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AuthorName)
+
+    <br />
+    <br />
+
+    <label>Yazar Soyadı</label>
+    <input type="text" name="AuthorSurname" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AuthorSurname)
+
+    <br />
+    <br />
+
+    <label>Yazar Resim</label>
+    <input type="text" name="AuthorImage" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AuthorImage)
+
+    <br />
+    <br />
+
+    <label>Yazar Mail</label>
+    <input type="text" name="AuthorMail" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AuthorMail)
+
+    <br />
+    <br />
+
+    <label>Yazar Unvan</label>
+    <input type="text" name="AuthorTitle" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AuthorTitle)
+
+    <br />
+    <br />
+
+    <label>Yazar Hakkında</label>
+    <input type="text" name="AuthorAbout" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AuthorAbout)
+
+    <br />
+    <br />
+
+    <label>Yazar Parola</label>
+    <input type="text" name="AuthorPassword" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AuthorPassword)
+
+    <br />
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+}

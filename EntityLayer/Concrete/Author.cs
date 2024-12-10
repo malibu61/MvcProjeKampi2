@@ -21,11 +21,18 @@ namespace EntityLayer.Concrete
         [StringLength(500)]
         public string AuthorImage { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
+        public string AuthorAbout { get; set; }
+
+        [StringLength(200)]
         public string AuthorMail { get; set; }
 
-        [StringLength(20)]
+        [StringLength(30)]
+        public string AuthorTitle{ get; set; }
+
+        [StringLength(200)]
         public string AuthorPassword { get; set; }
+        public bool AuthorStatus { get; set; }
         public ICollection<Heading> Headings { get; set; }
         public ICollection<Content> Contents { get; set; }
     }
