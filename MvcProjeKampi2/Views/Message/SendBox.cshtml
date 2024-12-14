@@ -72,9 +72,44 @@
                             <table class="table table-hover table-striped">
                                 <tbody>
 
+                                    @*@foreach (var item in Model)
+                                        {
+
+                                            <tr>
+                                                <td>
+                                                    <div class="icheck-primary">
+                                                        <input type="checkbox" value="" id="check1">
+                                                        <label for="check1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="mailbox-star"><a href="/Message/GetSendBoxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                                <td class="mailbox-name"><a href="/Message/GetSendBoxMessageDetails/@item.MessageId"> <b> Kime:</b>@item.ReceiverMail <i> <b>Kimden:</b>@item.SenderMail</i> </a></td>
+
+                                                @if (item.MessageContent.Length < 30 || (item.MessageContent == null))
+                                                {
+                                                    <td class="mailbox-subject" href="/Message/GetSendBoxMessageDetails/@item.MessageId">
+                                                        <b>(@item.Subject)</b>@item.MessageContent
+                                                    </td>
+                                                }
+                                                else if (item.MessageContent.Length >= 30)
+                                                {
+                                                    <td class="mailbox-subject" href="/Message/GetSendBoxMessageDetails/@item.MessageId">
+                                                    <b>(@item.Subject)</b>
+                                                    @item.MessageContent.Substring(0, 30)...
+                                                    </td>
+                                                }
+
+
+
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">
+                                                    @item.MessageDate.ToString("dd-MMM-yy")
+                                                </td>
+                                            </tr>
+                                        }*@
+
                                     @foreach (var item in Model)
                                     {
-
                                         <tr>
                                             <td>
                                                 <div class="icheck-primary">
@@ -82,15 +117,39 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Contact/ContactDetail/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/ContactDetail/@item.MessageId"> <b> Kime:</b>@item.ReceiverMail <i> <b>Kimden:</b>@item.SenderMail</i> </a></td>
-                                            <td class="mailbox-subject" href="/Contact/ContactDetail/@item.MessageId">
-                                                <b>(@item.Subject)</b>@item.MessageContent.Substring(0, 30)...
+                                            <td class="mailbox-star"><a href="/Message/GetSendBoxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name">
+                                                <a href="/Message/GetSendBoxMessageDetails/@item.MessageId">
+                                                    <b>Kime:</b>@item.ReceiverMail <i><b>Kimden:</b>@item.SenderMail</i>
+                                                </a>
                                             </td>
+
+                                            @if (item.MessageContent == null)
+                                            {
+                                                <td class="mailbox-subject" href="/Message/GetSendBoxMessageDetails/@item.MessageId">
+                                                    <b>(@item.Subject)</b> Mesaj içeriği yok.
+                                                </td>
+                                            }
+                                            else if (item.MessageContent.Length < 30)
+                                            {
+                                                <td class="mailbox-subject" href="/Message/GetSendBoxMessageDetails/@item.MessageId">
+                                                    <b>(@item.Subject)</b> @item.MessageContent
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td class="mailbox-subject" href="/Message/GetSendBoxMessageDetails/@item.MessageId">
+                                                    <b>(@item.Subject)</b> @item.MessageContent.Substring(0, 30)...
+                                                </td>
+                                            }
+
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">
+                                                @item.MessageDate.ToString("dd-MMM-yy")
+                                            </td>
                                         </tr>
                                     }
+
                                 </tbody>
                             </table>
                             <!-- /.table -->

@@ -24,8 +24,8 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            
-            @Html.Action("MessageLeftPartial","Contact")
+
+            @Html.Action("MessageLeftPartial", "Contact")
 
             <!-- /.col -->
             <div class="col-md-9">
@@ -88,7 +88,7 @@
                                                 <b>@item.Subject</b> @item.Message
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">@item.ContactTime.ToString("dd-MMM-yy")</td>
                                         </tr>
                                     }
                                 </tbody>

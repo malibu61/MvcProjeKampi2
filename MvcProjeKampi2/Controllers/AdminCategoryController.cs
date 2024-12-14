@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi2.Controllers
 {
+    [Authorize]
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
